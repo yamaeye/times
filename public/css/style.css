@@ -123,8 +123,8 @@ button::-moz-focus-inner {
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif, "微软雅黑";
   font-style: normal;
   font-weight: normal;
-  src: url("https://yamaeye.pages.dev/newspaper/public/css/fonts/fontawesome-webfont.eot?v=#4.0.3");
-  src: url("https://yamaeye.pages.dev/newspaper/public/css/fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("https://yamaeye.pages.dev/newspaper/public/css/fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("https://yamaeye.pages.dev/newspaper/public/css/fonts/fontawesome-webfont.ttf?v=#4.0.3") format("truetype"), url("https://yamaeye.pages.dev/newspaper/public/css/fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
+  src: url("https://yamaeye.pages.dev/css/fonts/fontawesome-webfont.eot?v=#4.0.3");
+  src: url("https://yamaeye.pages.dev/css/fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("https://yamaeye.pages.dev/css/fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("https://yamaeye.pages.dev/css/fonts/fontawesome-webfont.ttf?v=#4.0.3") format("truetype"), url("https://yamaeye.pages.dev/css/fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
 }
 html,
 body {
@@ -151,7 +151,7 @@ body {
   visibility: hidden;
   width: 26px;
   height: 48px;
-  background: url("https://yamaeye.pages.dev/newspaper/public/css/images/rocket.png") no-repeat 50% 0;
+  background: url("https://yamaeye.pages.dev/css/images/rocket.png") no-repeat 50% 0;
   opacity: 0;
   -webkit-transition: visibility 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), -webkit-transform 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   -moz-transition: visibility 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), -moz-transform 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
@@ -170,7 +170,7 @@ body {
   display: block;
   margin-top: 48px;
   height: 14px;
-  background: url("https://yamaeye.pages.dev/newspaper/public/css/images/rocket.png") no-repeat 50% -48px;
+  background: url("https://yamaeye.pages.dev/css/images/rocket.png") no-repeat 50% -48px;
   opacity: 0.5;
   -webkit-transition: -webkit-transform 0.2s;
   -moz-transition: -moz-transform 0.2s;

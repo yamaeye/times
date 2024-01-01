@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023.12.27.秋夜.md",
+                "file": "2022.06.21.“单语田野调查法”演示.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "小丸",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -101,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023.12.27.秋夜.md",
+                "file": "2022.06.21.“单语田野调查法”演示.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023.12.27.秋夜.md",
+                "file": "2022.06.21.“单语田野调查法”演示.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023.12.27.秋夜.md"
+                "file": "2022.06.21.“单语田野调查法”演示.md"
               }
             }
           },
@@ -189,14 +189,14 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "remotely-save:Remotely Save": false,
-      "obsidian-spaced-repetition:复习卡片": false
+      "obsidian-spaced-repetition:复习卡片": false,
+      "remotely-save:Remotely Save": false
     }
   },
   "active": "4336ff02c4177f2a",
   "lastOpenFiles": [
-    "2023.12.27.秋夜.sync-conflict-20231228-143515-SXYZRSI.md",
     "2023.12.27.秋夜.md",
+    "2023.12.27.秋夜.sync-conflict-20231228-143515-SXYZRSI.md",
     "2022.10.18.记忆比赛选手詹姆斯·帕特森.md",
     "2022.12.02.国际象棋大师Alekhine的盲棋比赛.md",
     "2023.07.06.成功人士罗杰.md",
