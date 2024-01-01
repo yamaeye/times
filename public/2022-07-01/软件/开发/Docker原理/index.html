@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Docker原理 | 时空回廊</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="新闻, 转载" />
+  
+  
+  
+  
+  <meta name="description" content="来源：神州数码企业服务集团">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker原理">
+<meta property="og:url" content="http://times.sophie-eden.ltd/2022-07-01/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/Docker%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:site_name" content="时空回廊">
+<meta property="og:description" content="来源：神州数码企业服务集团">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-32252d25fca277a9b0e084c9b84f9752_r.jpg">
+<meta property="article:published_time" content="2022-07-01T13:22:42.000Z">
+<meta property="article:modified_time" content="2023-12-27T03:06:15.000Z">
+<meta property="article:author" content="Sophie Eden">
+<meta property="article:tag" content="容器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic3.zhimg.com/v2-32252d25fca277a9b0e084c9b84f9752_r.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="时空回廊" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="时空回廊" rel="home"> 时空回廊 </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">不确定之物的终点站·聆听万物之声·资讯统合思念体·薛定谔的猫</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="/"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories/软件"> <a class="" href="/categories/%E8%BD%AF%E4%BB%B6">软件</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories/仓库"> <a class="" href="/categories/%E4%BB%93%E5%BA%93">仓库</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories/资料"> <a class="" href="/categories/%E8%B5%84%E6%96%99">资料</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories/剪报"> <a class="" href="/categories/%E5%89%AA%E6%8A%A5">剪报</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="archives"> <a class="" href="/archives">时间线</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="tags"> <a class="" href="/tags">标签</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Docker原理" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Docker原理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2022-07-01/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/Docker%E5%8E%9F%E7%90%86/" class="article-date">
+	  <time datetime="2022-07-01T13:22:42.000Z" itemprop="datePublished">七月 1, 2022</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6/">软件</a>, <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/">开发</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>来源：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/440672717">神州数码企业服务集团</a></p>
+<span id="more"></span>
+<h2 id="Linux-容器-LXC"><a href="#Linux-容器-LXC" class="headerlink" title="Linux 容器 (LXC)"></a>Linux 容器 (LXC)</h2><p>在典型的虚拟化环境中，一台或多台虚拟机运行在一个物理服务器之上，这些物理服务器又使用着像 Xen、Hyper-V 等管理程序。而容器运行在操作系统内核之上，我们可以将其称为操作系统级虚拟化。<br>在深入了解底层容器概念之前，我们需要了解两个关键的 Linux 概念：<br><code>用户空间</code>（user space）：运行用户程序（应用程序、进程）所需的所有代码被称为用户空间。当启动程序操作时，例如创建一个文件，用户空间中的进程会向内核空间发出系统调用。<br><code>内核空间</code>（kernel space）：这里有着与系统硬件、存储等交互的内核代码，是操作系统的核心。</p>
+<h2 id="容器是一个进程"><a href="#容器是一个进程" class="headerlink" title="容器是一个进程"></a>容器是一个进程</h2><p>当我们启动一个应用程序，比如说 Nginx Web 服务器，这个时候实际上是在启动一个进程。而进程本身是一个具有有限隔离的自包含指令。<br>那么如果我们仅使用进程运行和操作所需的文件与配置来隔离进程，又会怎样呢？<br>而这正是容器的工作原理。<br>容器基本上是一个具有足够隔离用户空间组件的进程，因此它给人一种独立操作系统的感觉。<br>父容器进程可能有一个子进程，所以可以说，一个容器也是一组进程。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">当我们启动一个 Nginx 服务时，它会启动一个父 Nginx 进程，然后父进程跨越进它的子进程，比如存管理器、缓存加载器和工作器。</span><br><span class="line">因此，当启动一个 Nginx 容器时，我们正在其隔离的环境中启动一个主 Nginx 进程。</span><br></pre></td></tr></table></figure>
+
+<p>每个容器都有其独立的用户空间，我们可以在单个主机上运行多个容器。这是否意味着容器拥有整个操作系统？<br>当然不是。与拥有自己内核的虚拟机不同，容器只包含与特定发行版相关的所需文件，并使用共享主机内核。<br>有意思的是，我们可以在共享相同内核空间的单个主机上运行基于不同 Linux 发行版的容器。例如，我们可以在 Ubuntu 服务器上运行 RHEL、CentOS、基于 SUSE 的容器。这是可行的，因为对于所有 Linux 发行版，只有用户空间不同，内核空间相同。</p>
+<h2 id="docker-基于-Linux-内核的底层实现"><a href="#docker-基于-Linux-内核的底层实现" class="headerlink" title="docker 基于 Linux 内核的底层实现"></a>docker 基于 Linux 内核的底层实现</h2><p>Linux 有两个重要的内核功能，分别是<a href="#Linux-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%EF%BC%88NameSpace%EF%BC%89">命名空间（namespaces）</a>和<a href="#Linux-%E6%8E%A7%E5%88%B6%E7%BB%84%EF%BC%88Control-groups%EF%BC%89">控制组（control groups）</a>。在主机中，容器与容器之间的隔离正是由这两个内核功能实现的。<br>为了更好的理解 Linux 容器的基本概念，我们可以想象现实生活中的公寓大楼。虽然公寓楼是一个大的整体，但是在大楼内部，公寓与公寓之间是相互隔离的，每个公寓都有自己的水、电、气。我们用钢筋、水泥这些建筑材料来实现这种隔离。除非被邀请进入他人的公寓，我们是不能非法闯入他人的房屋的。<br>而一个主机就好比这样的公寓大楼，容器就是楼中的一个个公寓。每个容器有自己的 CPU、内存、IP 地址、挂载点、进程，这就好比每个公寓自己的水电气。而实现容器与容器间隔离的 “钢筋水泥” 正是命名空间和控制组。</p>
+<h3 id="Linux-命名空间（NameSpace）"><a href="#Linux-命名空间（NameSpace）" class="headerlink" title="Linux 命名空间（NameSpace）"></a>Linux 命名空间（NameSpace）</h3><p>创建容器就是创建一个隔离良好的环境来运行服务（进程）。为了达到这种级别的隔离，容器应该要有自己的文件系统、IP 地址、挂载点、进程 ID 等，这就需要使用 Linux 命名空间来实现这一点。<br>命名空间为容器设置了边界，让容器拥有了自己的挂载点、用户、IP 地址、以及进程管理等，并且在该命名空间内运行的进程在其他命名空间中没有任何权限。<br>我们知道 Linux 中的 PID、IPC、网络等资源是全局的，而 NameSpace 机制是一种资源隔离方案，在该机制下这些资源就不再是全局的了，而是属于某个特定的 NameSpace，各个 NameSpace 下的资源互不干扰，这就使得每个 NameSpace 看上去就像一个独立的操作系统一样，但是只有 NameSpace 是不够的。</p>
+<h3 id="Linux-控制组（Control-groups）"><a href="#Linux-控制组（Control-groups）" class="headerlink" title="Linux 控制组（Control groups）"></a>Linux 控制组（Control groups）</h3><p>虽然有了 NameSpace 技术可以实现资源隔离，但进程还是可以不受控的访问系统资源，比如 CPU、内存、磁盘、网络等。<br>当我们启动服务时，我们不会自己指定划分任何内存或者 CPU 限制，而是让内核来为服务划分优先级和分配资源。<br>但是，我们可以使用 Linux 的内核功能控制组 CGroups，为我们自己的服务设置明确的 CPU 和内存限制。但它不是一种很直接的方法，我们还需要进行一些额外的配置和调整。<br>由于我们可以在主机内运行多个容器，因此应该有一种机制来限制资源的使用、设备的访问等。而这里正是控制组的用武之地。<br>Linux 控制组管理着容器使用的资源，我们可以限制容器的 CPU、内存、网络和 IO 资源。</p>
+<p>那么如果我们不限制容器的 CPU 和内存资源又会怎样呢？<br>如果不限制，单个容器可能最终会占用所有的主机资源，无资源可用就会导致其他容器的崩溃。<br>为了控制容器中进程对资源的访问，Docker 采用 control groups 技术就可以控制容器中进程对系统资源的消耗了，比如你可以限制某个容器使用内存的上限、可以在哪些 CPU 上运行等等。<br>像 Docker 这样的工具抽象出了所有复杂的后端配置，从而让我们只需要简单地设定参数，就可以指定这些资源限制。<br>有了这两项技术，容器看起来就真的像是独立的操作系统了。</p>
+<h2 id="什么是-Docker？"><a href="#什么是-Docker？" class="headerlink" title="什么是 Docker？"></a>什么是 Docker？</h2><p>Docker 是一个流行的用 Go 语言开发的开源项目，由 Dotcloud 公司开发。<br>Docker 基本上就是一个容器引擎，它使用 Linux 内核功能（如命名空间和控制组）在操作系统之上创建容器。<br>这就意味着，Docker 可以十分轻易地完成我们在 LXC 部分中所学到的所有有关容器的概念和功能 。只需执行一些 Docker 命令，我们就可以启动和运行一个容器。<br>在这里我们可能会产生一些困惑， Docker 与 Linux 容器 (LXC) 又有什么不同呢？毕竟两者的概念和实现看起来是那么的相似。</p>
+<h3 id="Docker-与容器的区别"><a href="#Docker-与容器的区别" class="headerlink" title="Docker 与容器的区别"></a>Docker 与容器的区别</h3><p>Docker 最初是构建在 Linux 容器 (LXC) 之上的，但后来 Docker 用自己的容器运行时 libcontainer（现在是 runc 的一部分）替换了 LXC。<br>此外，除了作为一种容器技术之外，Docker 还具有定义明确的包装器组件，这使打包应用程序变得十分容易。要知道，在 Docker 出现之前，运行容器并不是一件容易的事。所有的这一切意味着，Docker 通过将所有应用程序系统的需求打包到容器中，完成了将应用程序与基础设施分离的所有工作。<br>例如，如果有一个 Java jar 文件，我们可以在任何安装了 java 的服务器上运行它。同样的，一旦使用 Docker 将容器与所需的应用程序打包在一起，我们就可以在任何其他安装了 Docker 的主机上运行它。</p>
+<h3 id="Docker-优点"><a href="#Docker-优点" class="headerlink" title="Docker 优点"></a>Docker 优点</h3><p>Docker 有一个高效的工作流程，可以将应用程序从开发环境转移到测试环境、再转移到生产环境。当我们在实际完成将应用程序打包到 Docker 映像的一个操作时，会对它有更深的了解。<br>启动 docker 容器非常快速，只需不到一秒钟，而且 Docker 可以在任何具有兼容 Linux 内核的主机上运行。（也支持 Windows）<br>Docker 使用<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/UnionFS">写时复制联合文件系统</a>（ Copy-on-write union file system ）来存储图像。每当对容器进行更改时，只会使用写时复制模型将更改写入磁盘。使用写时复制，我们优化了所有容器的共享存储层。<br>Docker 最大的特点是协作。Docker 镜像可以推送到存储库，也可以下拉到任何其他主机以从该镜像运行容器。<br>此外，Docker hub 拥有由用户创建的数千个镜像，我们可以根据、需求将这些镜像拉取到我们自己的主机。此外，它主要用于容器编排工具，如 kubernetes。</p>
+<h3 id="Docker-的核心架构"><a href="#Docker-的核心架构" class="headerlink" title="Docker 的核心架构"></a>Docker 的核心架构</h3><p>当 Docker 最初推出时，它具有单体架构，现在它分为以下三个不同的组成部分：</p>
+<ol>
+<li><a href="#Docker%E5%BC%95%E6%93%8E-(dockerd)">Docker引擎</a> (dockerd)</li>
+<li><a href="#docker-containerd-(containerd)">docker-containerd</a> (containerd)</li>
+<li><a href="#docker-runc">docker-runc</a> (runc)</li>
+</ol>
+<h4 id="Docker引擎-dockerd"><a href="#Docker引擎-dockerd" class="headerlink" title="Docker引擎 (dockerd)"></a>Docker引擎 (dockerd)</h4><p>Docker 引擎由 docker daemon、API 接口和 Docker CLI 组成。<br>Docker daemon (dockerd) 作为 dockerd systemd 服务持续运行，它负责构建 docker 镜像。<br>dockerd 调用 docker-containerd 接口，来管理图像和运行容器。</p>
+<h4 id="docker-containerd-containerd"><a href="#docker-containerd-containerd" class="headerlink" title="docker-containerd (containerd)"></a>docker-containerd (containerd)</h4><p>containerd 是另一个系统 daemon 程序服务，它负责下载 docker 镜像并将它们作为容器运行。containerd 通过公开 API 来接收来自 dockerd 服务的指令。</p>
+<h4 id="docker-runc"><a href="#docker-runc" class="headerlink" title="docker-runc"></a>docker-runc</h4><p>runc 是容器运行时，负责创建容器所需的命名空间和 cgroup，然后在这些命名空间内运行容器命令。runc 运行时是按照 OCI 规范实现的。</p>
+<h4 id="containerd-和-runc-有什么区别？"><a href="#containerd-和-runc-有什么区别？" class="headerlink" title="containerd 和 runc 有什么区别？"></a>containerd 和 runc 有什么区别？</h4><p>containerd 负责管理容器，runc 负责使用来自 containerd 的输入，来运行容器（在容器内创建命名空间、cgroup 和运行命令）</p>
+<h2 id="3-6、Docker-是如何工作的？"><a href="#3-6、Docker-是如何工作的？" class="headerlink" title="3.6、Docker 是如何工作的？"></a>3.6、Docker 是如何工作的？</h2><h3 id="Docker-组件"><a href="#Docker-组件" class="headerlink" title="Docker 组件"></a>Docker 组件</h3><p>Docker 由以下几个组件组成：</p>
+<ol>
+<li><a href="#Docker-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B-(dockerd)">Docker 守护进程</a> (dockerd)</li>
+<li>Docker 客户端 </li>
+<li><a href="#Docker-%E9%95%9C%E5%83%8F">Docker 镜像</a></li>
+<li><a href="#Docker-%E6%B3%A8%E5%86%8C%E8%A1%A8">Docker 注册表</a></li>
+<li><a href="#Docker-%E5%AE%B9%E5%99%A8">Docker 容器</a></li>
+</ol>
+<p>下面是官方的高级 docker 架构图，展示了常见的 Docker 工作流程。</p>
+<p><img src="https://pic3.zhimg.com/v2-32252d25fca277a9b0e084c9b84f9752_r.jpg" alt="Docker 工作流程"></p>
+<h4 id="Docker-守护进程-dockerd"><a href="#Docker-守护进程-dockerd" class="headerlink" title="Docker 守护进程 (dockerd)"></a>Docker 守护进程 (dockerd)</h4><p>Docker 具有<code>客户端 - 服务器</code>架构。Docker Daemon (dockerd) 或服务器负责与容器相关的所有操作。<br>守护进程通过 CLI 或 REST API 从 Docker 客户端接收命令。Docker 客户端可以与守护进程位于同一主机上，也可以位于任何其他主机上。<br>在默认情况下，docker 守护进程监听 docker.sock UNIX 套接字。如果有任何远程访问 docker API 的用例，则需要通过主机端口公开它。一个这样的用例我们<a target="_blank" rel="noopener" href="https://devopscube.com/docker-containers-as-build-slaves-jenkins/">将 Docker 作为 Jenkins 代理运行</a>。<br>如果我们想<a target="_blank" rel="noopener" href="https://devopscube.com/run-docker-in-docker/">在 docker 中运行 docker</a>，可以使用主机中的 docker.sock 。</p>
+<h5 id="Docker-引擎和-Docker-守护进程有什么区别？"><a href="#Docker-引擎和-Docker-守护进程有什么区别？" class="headerlink" title="Docker 引擎和 Docker 守护进程有什么区别？"></a>Docker 引擎和 Docker 守护进程有什么区别？</h5><p>Docker 引擎由 docker 守护进程、rest 接口和 docker CLI 组成。Docker 守护进程是 systemd dockerd 服务，负责构建 docker 镜像，并将 docker 指令发送到 containerd 运行时。</p>
+<h4 id="Docker-镜像"><a href="#Docker-镜像" class="headerlink" title="Docker 镜像"></a>Docker 镜像</h4><p>镜像是 Docker 的基本组成部分，我们需要镜像来运行 Docker 容器。镜像包含操作系统库、依赖项和运行应用程序的工具。<br>为了创建容器，我们可以用应用程序依赖项，来预先构建镜像。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">例如，如果要将 Nginx Web 服务器作为一个 Ubuntu 容器来运行，则需要使用 Nginx 二进制文件和运行 Nginx 所需的所有操作系统库，来创建 Docker 镜像。</span><br></pre></td></tr></table></figure>
+<p>Docker 有一个用于构建镜像的概念—— <code>Dockerfile</code> 。Dockerfile 基本上就是一个文本文件，每一行包含一个命令（指令）。<br>以下是一个 Dockerfile 的示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FROM ubuntu:18.04</span><br><span class="line">COPY . /app</span><br><span class="line">RUN make /app</span><br><span class="line">CMD python /app/app.py</span><br></pre></td></tr></table></figure>
+<p>Docker 镜像是用分层的方式来组织的。Dockerfile 上的每条指令都会在镜像中添加一个图层。<br>镜像最顶层的可写层是容器。镜像的顶层是可写的，并由正在运行的容器使用。图像中的其他层是只读的。<br>每个镜像都是从一个基础镜像创建起的。基础镜像可以是父镜像，也可以是从父镜像构建的镜像。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">例如，如果我们可以使用 Ubuntu 的基本镜像，并在其中创建另一个包含 Nginx 应用程序的镜像。</span><br></pre></td></tr></table></figure>
+<p>那么这个基础镜像（父镜像）又来自哪里呢？有 docker 实用程序可以创建初始父基本镜像。基本上它需要所需的操作系统库并将其创建到基本镜像中。我们不必这样做，因为我们将获得所有 Linux 发行版的官方基础映像。</p>
+<h4 id="Docker-注册表"><a href="#Docker-注册表" class="headerlink" title="Docker 注册表"></a>Docker 注册表</h4><p>Docker 注册表是 Docker 镜像的存储库。使用 Docker 注册表，我们可以共享镜像。Docker 注册表充当了 Docker 镜像的中央存储库。<br>注册中心可以是公共的，也可以是私有的。Docker Inc 提供了一项称为 Docker Hub 的托管注册表服务。它允许用户从一个中心位置上传和下载镜像。<br>Docker hub 的作用类似于 git，我们可以在本地构建镜像，然后镜像提交推送到 Docker Docker hub 上。<br>默认情况下，当安装 docker 时，除非在 Docker 设置中指定自定义注册表，否则它会从公共的 Docker Hub 中查找镜像。<br>在企业网络 &#x2F; 项目中使用 docker 时，请设置自己的 docker 注册表，而不是使用公共的 docker hub。所有云提供商都有自己的容器注册服务。</p>
+<h4 id="Docker-容器"><a href="#Docker-容器" class="headerlink" title="Docker 容器"></a>Docker 容器</h4><p>Docker 容器是 Docker 的执行环境。容器是从镜像创建的，它属于镜像的可写层。<br>我们可以将应用程序打包到一个容器中，提交它并使其成为黄金映像（golden image），进而从中构建更多容器。<br>容器可以启动、停止、提交和终止。如果我们在未提交的情况下终止容器，所有的容器更改都将丢失。<br>理想情况下，容器被视为不可变的对象，不建议对正在运行的容器进行更改，我们仅出于测试目的对正在运行的容器进行更改。</p>
+<h3 id="为什么容器比虚拟机好？"><a href="#为什么容器比虚拟机好？" class="headerlink" title="为什么容器比虚拟机好？"></a>为什么容器比虚拟机好？</h3><h4 id="资源利用和成本"><a href="#资源利用和成本" class="headerlink" title="资源利用和成本"></a>资源利用和成本</h4><p>我们可以使用虚拟机独立运行应用程序，这里所谓的独立运行是指一台虚拟器运行一个服务。但是虚拟机仍然可能未被充分利用。此外，为应用程序调整虚拟机的大小并不是一件容易的事。<br>另一方面，容器可以在非常小的 CPU 和内存上运行。此外，您甚至可以在 VM 内运行多个容器以进行应用程序隔离。另外，调整容器大小需要几秒钟。</p>
+<h4 id="配置和部署"><a href="#配置和部署" class="headerlink" title="配置和部署"></a>配置和部署</h4><p>取决于所涉及的工作流，配置虚拟机并在其上<a target="_blank" rel="noopener" href="https://devopscube.com/release-management-explained/">部署应用程序</a>可能需要几分钟到几小时的时间，即使回滚也需要时间。<br>但是我们却可以在几秒钟内部署一个容器，并在几秒钟内将其回滚。</p>
+<h4 id="漂移管理"><a href="#漂移管理" class="headerlink" title="漂移管理"></a>漂移管理</h4><p>虚拟机中的漂移管理并不容易。我们需要拥有成熟的<a target="_blank" rel="noopener" href="https://devopscube.com/devops-tools-for-infrastructure-automation/">自动化</a>和流程，以确保所有环境都相似。遵循不可变的部署模型可避免虚拟机环境中的漂移。<br>对于容器，一旦镜像生成，那么它在所有环境中都是一样的。要进行任何更改时，我们需要开始在 dev env 中进行更改并重新生成容器映像。</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6/">软件</a>, <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/">开发</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022-07-12/%E8%BD%AF%E4%BB%B6/%E8%A7%86%E9%A2%91/MP4%E8%BD%AC%E7%A0%81/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          MP4转码
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022-07-01/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/%E4%BB%80%E4%B9%88%E6%98%AFDocker%EF%BC%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">什么是Docker？</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-%E5%AE%B9%E5%99%A8-LXC"><span class="nav-number">1.</span> <span class="nav-text">Linux 容器 (LXC)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E6%98%AF%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">容器是一个进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-%E5%9F%BA%E4%BA%8E-Linux-%E5%86%85%E6%A0%B8%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">docker 基于 Linux 内核的底层实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%EF%BC%88NameSpace%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">Linux 命名空间（NameSpace）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-%E6%8E%A7%E5%88%B6%E7%BB%84%EF%BC%88Control-groups%EF%BC%89"><span class="nav-number">3.2.</span> <span class="nav-text">Linux 控制组（Control groups）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Docker%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">什么是 Docker？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E4%B8%8E%E5%AE%B9%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">4.1.</span> <span class="nav-text">Docker 与容器的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E4%BC%98%E7%82%B9"><span class="nav-number">4.2.</span> <span class="nav-text">Docker 优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E7%9A%84%E6%A0%B8%E5%BF%83%E6%9E%B6%E6%9E%84"><span class="nav-number">4.3.</span> <span class="nav-text">Docker 的核心架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker%E5%BC%95%E6%93%8E-dockerd"><span class="nav-number">4.3.1.</span> <span class="nav-text">Docker引擎 (dockerd)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#docker-containerd-containerd"><span class="nav-number">4.3.2.</span> <span class="nav-text">docker-containerd (containerd)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#docker-runc"><span class="nav-number">4.3.3.</span> <span class="nav-text">docker-runc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#containerd-%E5%92%8C-runc-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">4.3.4.</span> <span class="nav-text">containerd 和 runc 有什么区别？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6%E3%80%81Docker-%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">3.6、Docker 是如何工作的？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-%E7%BB%84%E4%BB%B6"><span class="nav-number">5.1.</span> <span class="nav-text">Docker 组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B-dockerd"><span class="nav-number">5.1.1.</span> <span class="nav-text">Docker 守护进程 (dockerd)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Docker-%E5%BC%95%E6%93%8E%E5%92%8C-Docker-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">5.1.1.1.</span> <span class="nav-text">Docker 引擎和 Docker 守护进程有什么区别？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker-%E9%95%9C%E5%83%8F"><span class="nav-number">5.1.2.</span> <span class="nav-text">Docker 镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker-%E6%B3%A8%E5%86%8C%E8%A1%A8"><span class="nav-number">5.1.3.</span> <span class="nav-text">Docker 注册表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker-%E5%AE%B9%E5%99%A8"><span class="nav-number">5.1.4.</span> <span class="nav-text">Docker 容器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AE%B9%E5%99%A8%E6%AF%94%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%A5%BD%EF%BC%9F"><span class="nav-number">5.2.</span> <span class="nav-text">为什么容器比虚拟机好？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E5%88%A9%E7%94%A8%E5%92%8C%E6%88%90%E6%9C%AC"><span class="nav-number">5.2.1.</span> <span class="nav-text">资源利用和成本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%92%8C%E9%83%A8%E7%BD%B2"><span class="nav-number">5.2.2.</span> <span class="nav-text">配置和部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BC%82%E7%A7%BB%E7%AE%A1%E7%90%86"><span class="nav-number">5.2.3.</span> <span class="nav-text">漂移管理</span></a></li></ol></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/categories/%E8%BD%AF%E4%BB%B6" class="mobile-nav-link">software</a>
+  
+    <a href="/categories/%E4%BB%93%E5%BA%93" class="mobile-nav-link">goods</a>
+  
+    <a href="/categories/%E8%B5%84%E6%96%99" class="mobile-nav-link">info</a>
+  
+    <a href="/categories/%E5%89%AA%E6%8A%A5" class="mobile-nav-link">news</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2023 时空回廊 <a target="_blank" href="https://beian.miit.gov.cn/" rel="nofollow noopener">辽ICP备2023012496号-1</a>  <img style="width: 15px; height: 15px;" src="http://www.beian.gov.cn/img/new/gongan.png" alt="全国互联网安全"><a href= "https://beian.mps.gov.cn/#/query/webSearch?code=21080202000249\" rel=\"noreferrer\" target=\"_blank\">辽公网安备21080202000249号</a >
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>&<a href="https://github.com/random-yang/paper" target="_blank">paper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/bootstrap.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'G-9KV0DS4YW6', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1281057862&web_id=1281057862" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+	<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?{{ theme.baidu_analytics }}";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

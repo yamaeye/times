@@ -1,0 +1,92 @@
+/* 代码块 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+.b3-typography .code-block,
+.protyle-wysiwyg [data-node-id].code-block {
+    background-color: var(--custom-block-code-background-color);
+}
+
+/* 行号 */
+.protyle-wysiwyg [data-node-id].code-block>.protyle-linenumber__rows {
+    border-right: var(--custom-block-code-linenumber-separator-width) solid var(--custom-block-code-linenumber-separator-color);
+    background-color: var(--custom-block-code-linenumber-background-color);
+    /* padding-top: 0; */
+    /* padding-bottom: 0; */
+}
+
+/* 被选中块的行号 */
+.protyle-wysiwyg--hl .protyle-linenumber__rows,
+.protyle-wysiwyg--select .protyle-linenumber__rows {
+    background-color: var(--b3-theme-primary-lightest) !important;
+}
+
+/* 编辑区 */
+.b3-typography .hljs,
+.protyle-wysiwyg [data-node-id].code-block>.hljs {
+    background-color: transparent;
+}
+
+/* 👇 导出预览样式 👇 */
+.b3-typography .protyle-linenumber__rows,
+.b3-typography .hljs {
+    padding: 0.5em;
+}
+
+/* 👆 导出预览样式 👆 */
+
+/* 块属性位置 */
+.protyle-wysiwyg [data-node-id].code-block>.protyle-attr {
+    top: -16px;
+}
+
+/* 行号标签 */
+.protyle-linenumber {
+    background-color: transparent;
+}
+
+/* 功能按钮栏 */
+.protyle-wysiwyg [data-node-id].code-block .protyle-action {
+    left: auto;
+    right: 0;
+    top: 0;
+    /* float: right; */
+    /* position: relative; */
+}
+
+/* 功能按钮常显 */
+.protyle-wysiwyg [data-node-id].code-block .protyle-action>span {
+    opacity: unset;
+}
+
+/* 间隔 */
+.protyle-wysiwyg [data-node-id].code-block .protyle-action>span.fn__flex-1 {
+    flex: 0;
+}
+
+/* 语言标签 */
+.protyle-wysiwyg [data-node-id].code-block .protyle-action .protyle-action__language {
+    margin-left: 0.5em !important;
+    margin-right: 0.5em;
+    margin-top: -6px;
+    font-size: 16px;
+    padding-top: 4px;
+}
+
+.protyle-wysiwyg [data-node-id].code-block .protyle-icons {
+    top: 0;
+    right: 0;
+}
+
+
+
+/* 代码块编辑时不闪(v1.8.9 已修复)
+ * REF https: //github.com/Achuan-2/siyuan-themes-tsundoku-light/blob/1aaa19fa3e6eebca4cb59606317d4bf1a23b0109/theme.css#L982
+ */
+/* .code-block .protyle-icons,
+.code-block .protyle-icons .protyle-action__copy,
+.code-block:hover .protyle-icons,
+.code-block:hover .protyle-icons .protyle-action__copy {
+    opacity: 1 !important;
+} */

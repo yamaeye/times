@@ -1,0 +1,228 @@
+{
+  "main": {
+    "id": "906285577c07d79b",
+    "type": "split",
+    "children": [
+      {
+        "id": "6141b15e220b3ecd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4336ff02c4177f2a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2023.12.27.秋夜.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d02eec433395ca65",
+    "type": "split",
+    "children": [
+      {
+        "id": "a08d2ffa176d9ecf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7e0aa02ece905948",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "15f2bed8f3f561ad",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "小丸",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "426bf9e2ad58659d",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "34e06eb407efda5a",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          },
+          {
+            "id": "adb566b67c0f393f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 379.5
+  },
+  "right": {
+    "id": "62649b69f7c89740",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e2da6d67c737ba7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "32383274d6ada912",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2023.12.27.秋夜.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3b0822ff0b134f69",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "2023.12.27.秋夜.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "99abb4148c45cdbd",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "43cf54d15004ac8f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2023.12.27.秋夜.md"
+              }
+            }
+          },
+          {
+            "id": "29bebb1e5ab68dd8",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "b4c1c3435f59e9ed",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "dcc4c2e8643b7639",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 248.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "canvas:新建白板": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "remotely-save:Remotely Save": false,
+      "obsidian-spaced-repetition:复习卡片": false
+    }
+  },
+  "active": "4336ff02c4177f2a",
+  "lastOpenFiles": [
+    "2023.12.27.秋夜.sync-conflict-20231228-143515-SXYZRSI.md",
+    "2023.12.27.秋夜.md",
+    "2022.10.18.记忆比赛选手詹姆斯·帕特森.md",
+    "2022.12.02.国际象棋大师Alekhine的盲棋比赛.md",
+    "2023.07.06.成功人士罗杰.md",
+    "2023.07.20.杰弗里的9·11情感试炼.md",
+    "2023.08.14.自学成才的观赏植物园艺师邦妮·布洛杰特.md",
+    "2023.08.20.安德森门窗公司的企业文化.md",
+    "2023.08.20.飞行员马特·布朗.md",
+    "2023.08.20.钢琴家塞尔玛·亨特.md",
+    "2023.08.20.捷飞络公司汽车修理培训.md",
+    "2023.08.20.农夫保险公司的销售培训.md",
+    "2023.08.20.演员纳撒尼尔·富勒如何背台词.md",
+    "2023.08.20.医学生麦克尔·扬.md",
+    "2023.12.26.语音识别.md",
+    "2023.09.18.投影仪.md",
+    "2023.10.26.厨师机.md",
+    "2023.11.01.空调.md",
+    "2020.09.14.解决卡脖子问题，关键还是要建立好自己的开源社区.md",
+    "2022.12.07.OCR.md",
+    "2023.01.20.翻译.md",
+    "2023.05.07.英语词典.md",
+    "2023.10.25.硬盘.md",
+    "2023.11.22.内衣.md",
+    "2023.04.28.记录.md",
+    "2023.04.27.运动.md",
+    "未命名 1.canvas",
+    "未命名.canvas",
+    "Pasted image 20230428092812.png"
+  ]
+}

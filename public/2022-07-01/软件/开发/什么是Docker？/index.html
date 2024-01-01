@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>什么是Docker？ | 时空回廊</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="新闻, 转载" />
+  
+  
+  
+  
+  <meta name="description" content="作者：程序员小灰">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是Docker？">
+<meta property="og:url" content="http://times.sophie-eden.ltd/2022-07-01/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/%E4%BB%80%E4%B9%88%E6%98%AFDocker%EF%BC%9F/index.html">
+<meta property="og:site_name" content="时空回廊">
+<meta property="og:description" content="作者：程序员小灰">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-01T04:40:54.000Z">
+<meta property="article:modified_time" content="2023-12-27T03:06:14.000Z">
+<meta property="article:author" content="Sophie Eden">
+<meta property="article:tag" content="容器">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="时空回廊" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="时空回廊" rel="home"> 时空回廊 </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">不确定之物的终点站·聆听万物之声·资讯统合思念体·薛定谔的猫</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="/"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories/软件"> <a class="" href="/categories/%E8%BD%AF%E4%BB%B6">软件</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories/仓库"> <a class="" href="/categories/%E4%BB%93%E5%BA%93">仓库</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories/资料"> <a class="" href="/categories/%E8%B5%84%E6%96%99">资料</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories/剪报"> <a class="" href="/categories/%E5%89%AA%E6%8A%A5">剪报</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="archives"> <a class="" href="/archives">时间线</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="tags"> <a class="" href="/tags">标签</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-什么是Docker？" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      什么是Docker？
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2022-07-01/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/%E4%BB%80%E4%B9%88%E6%98%AFDocker%EF%BC%9F/" class="article-date">
+	  <time datetime="2022-07-01T04:40:54.000Z" itemprop="datePublished">七月 1, 2022</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6/">软件</a>, <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/">开发</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作者：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/187505981">程序员小灰</a></p>
+<span id="more"></span>
+<h2 id="容器技术的起源"><a href="#容器技术的起源" class="headerlink" title="容器技术的起源"></a>容器技术的起源</h2><p>假设你们公司正在秘密研发下一个 “今日头条”APP，我们姑且称为明日头条，程序员自己从头到尾搭建了一套环境开始写代码，写完代码后程序员要把代码交给测试同学测试，这时测试同学开始从头到尾搭建这套环境，测试过程中出现问题程序员也不用担心，大可以一脸无辜的撒娇，“明明在人家的环境上可以运行的”。<br>测试同学测完后终于可以上线了，这时运维同学又要重新从头到尾搭建这套环境，费了九牛二虎之力搭建好环境开始上线，糟糕，上线系统就崩溃了，这时心理素质好的程序员又可以施展演技了，“明明在人家的环境上可以运行的”。<br>从整个过程可以看到，不但我们重复搭建了三套环境还要迫使程序员转行演员浪费表演才华，典型的浪费时间和效率，聪明的程序员是永远不会满足现状的，因此又到了程序员改变世界的时候了，容器技术应运而生。</p>
+<p>有的同学可能会说：“等等，先别改变世界，我们有虚拟机啊，VMware 好用的飞起，先搭好一套虚拟机环境然后给测试和运维 clone 出来不就可以了吗?”<br>在没有容器技术之前，这确实是一个好办法，只不过这个办法还没有那么好。<br>先科普一下，现在云计算其底层的基石就是虚拟机技术，云计算厂商买回来一堆硬件搭建好数据中心后使用虚拟机技术就可以将硬件资源进行切分了，比如可以切分出 100 台虚拟机，这样就可以卖给很多用户了。<br>你可能会想这个办法为什么不好呢?</p>
+<h2 id="容器技术-vs-虚拟机"><a href="#容器技术-vs-虚拟机" class="headerlink" title="容器技术 vs 虚拟机"></a>容器技术 vs 虚拟机</h2><p>我们知道和一个单纯的应用程序相比，操作系统是一个很重而且很笨的程序，简称笨重，有多笨重呢?<br>我们知道操作系统运行起来是需要占用很多资源的，大家对此肯定深有体会，刚装好的系统还什么都没有部署，单纯的操作系统其磁盘占用至少几十G起步，内存要几个G起步。</p>
+<p>假设我有一台机器，16G 内存，需要部署三个应用，那么使用虚拟机技术可以这样划分：<br>在这台机器上开启三个虚拟机，每个虚拟机上部署一个应用，其中 VM1 占用 2G 内存，VM2 占用 1G 内存，VM3 占用了 4G 内存。<br>我们可以看到虚拟本身就占据了总共 7G 内存，因此我们没有办法划分出更多虚拟机从而部署更多的应用程序，可是我们部署的是应用程序，要用的也是应用程序而不是操作系统。</p>
+<p>如果有一种技术可以让我们避免把内存浪费在 “无用” 的操作系统上岂不是太香? 这是问题一，主要原因在于操作系统太重了。<br>还有另一个问题，那就是启动时间问题，我们知道操作系统重启是非常慢的，因为操作系统要从头到尾把该检测的都检测了该加载的都加载上，这个过程非常缓慢，动辄数分钟，因此操作系统还是太笨了。</p>
+<p>那么有没有一种技术可以让我们获得虚拟机的好处又能克服这些缺点从而一举实现鱼和熊掌的兼得呢?<br>答案是肯定的，这就是容器技术。<br>容器一词的英文是 <a href="#%E5%AE%B9%E5%99%A8%EF%BC%88Container%EF%BC%89">container</a>，其实 container 还有集装箱的意思，集装箱绝对是商业史上了不起的一项发明，大大降低了海洋贸易运输成本。让我们来看看集装箱的好处：</p>
+<ol>
+<li>集装箱之间相互隔离</li>
+<li>长期反复使用</li>
+<li>快速装载和卸载</li>
+<li>规格标准，在港口和船上都可以摆放</li>
+</ol>
+<p>回到软件中的容器，其实容器和集装箱在概念上是很相似的。<br>现代软件开发的一大目的就是隔离，应用程序在运行时相互独立互不干扰，这种隔离实现起来是很不容易的，其中一种解决方案就是上面提到的虚拟机技术，通过将应用程序部署在不同的虚拟机中从而实现隔离。<br>但是虚拟机技术有上述提到的各种缺点，那么容器技术又怎么样呢?</p>
+<p>与虚拟机通过操作系统实现隔离不同，容器技术只隔离应用程序的运行时环境，但容器之间可以共享同一个操作系统，这里的运行时环境指的是程序运行依赖的各种库以及配置。<br>容器更加的轻量级且占用的资源更少，与操作系统动辄几 G 的内存占用相比，容器技术只需数 M 空间，因此我们可以在同样规格的硬件上大量部署容器，这是虚拟机所不能比拟的，而且不同于操作系统数分钟的启动时间容器几乎瞬时启动，容器技术为打包服务栈提供了一种更加高效的方式，So cool。</p>
+<h2 id="docker-中的重要概念"><a href="#docker-中的重要概念" class="headerlink" title="docker 中的重要概念"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaoQL520/article/details/121051589">docker 中的重要概念</a></h2><h3 id="容器（Container）"><a href="#容器（Container）" class="headerlink" title="容器（Container）"></a>容器（Container）</h3><p>容器可以被创建、启动、停止、删除、暂停、重启等。容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的命名空间（namespace），具有隔离性。<br>因此容器可以拥有自己的 root 文件系统、自己的网络配置、自己的进程空间等。容器内的进程是运行在一个隔离的环境里，使用起来，就好像是在一个独立于宿主的系统下操作一样。<br>这种特性使得容器封装的应用比直接在宿主运行更加安全，从此再也不用担心本地多个应用需要不同版本的依赖导致的冲突问题了。</p>
+<h3 id="镜像（Image）"><a href="#镜像（Image）" class="headerlink" title="镜像（Image）"></a>镜像（Image）</h3><p>实际上你可以简单的把 image 理解为可执行程序，container 就是运行起来的进程。<br>Docker镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、依赖库、资源、配置文件、运行时的配置参数（如：匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。</p>
+<h3 id="仓库（Repository）"><a href="#仓库（Repository）" class="headerlink" title="仓库（Repository）"></a>仓库（Repository）</h3><p>docker 中 image 的概念就类似于 “可执行程序”，我们可以从哪里下载到别人写好的应用程序呢? 很简单，那就是 APP Store，即应用商店。<br>与之类似，既然 image 也是一种 “可执行程序”，那么有没有 “Docker Image Store” 呢? 答案是肯定的，这就是 Docker Hub，docker 官方的 “应用商店”，你可以在这里下载到别人编写好的 image，这样你就不用自己编写 dockerfile 了。<br><code>docker registry</code> 可以用来存放各种 image，公共的可以供任何人下载 image 的仓库就是 docker Hub。那么该怎么从 Docker Hub 中下载 image 呢，就是下面的 <a href="#4-docker-pull">docker pull</a> 命令了。</p>
+<h2 id="docker-的工作流程"><a href="#docker-的工作流程" class="headerlink" title="docker 的工作流程"></a>docker 的工作流程</h2><p>实际上 docker 使用了常见的 <code>CS 架构</code>，也就是 <code>client-server</code> 模式，<code>docker client</code> 负责处理用户输入的各种命令，比如 docker build、docker run，真正工作的其实是 server，也就是 <code>docker demon</code>，值得注意的是，docker client 和 docker demon 可以运行在同一台机器上。</p>
+<h3 id="1-dockerfile"><a href="#1-dockerfile" class="headerlink" title="1. dockerfile"></a>1. dockerfile</h3><p>写程序需要源代码，那么 “写”image 就需要 dockerfile，dockerfile 就是 <code>image 的源代码</code>，docker 就是 “编译器”。<br>因此我们只需要在 dockerfile 中指定<strong>需要哪些程序、依赖什么样的配置</strong>，之后把 dockerfile 交给 “编译器”docker 进行 “编译”，也就是 <a href="#2-docker-build">docker build</a> 命令，生成的可执行程序就是 image，之后就可以运行这个 image 了，这就是 <a href="#3-docker-run">docker run</a> 命令，image 运行起来后就是 docker container。<br>docker build 和 docker run 是两个最核心的命令，会用这两个命令基本上 docker 就可以用起来了，剩下的就是一些补充。</p>
+<h3 id="2-docker-build"><a href="#2-docker-build" class="headerlink" title="2. docker build"></a>2. docker build</h3><p>当我们写完 dockerfile 交给 docker“编译” 时使用这个命令，那么 client 在接收到请求后转发给 docker daemon，接着 docker daemon 根据 dockerfile 创建出 “可执行程序”<a href="#%E9%95%9C%E5%83%8F%EF%BC%88Image%EF%BC%89">image</a>。</p>
+<h3 id="3-docker-run"><a href="#3-docker-run" class="headerlink" title="3. docker run"></a>3. docker run</h3><p>有了 “可执行程序”image 后就可以运行程序了，接下来使用命令 docker run，docker daemon 接收到该命令后找到具体的 image，然后加载到内存开始执行，image 执行起来就是所谓的 <a href="#%E5%AE%B9%E5%99%A8%EF%BC%88Container%EF%BC%89">container</a>。</p>
+<h3 id="4-docker-pull"><a href="#4-docker-pull" class="headerlink" title="4. docker pull"></a>4. docker pull</h3><p>这个命令的实现也很简单，那就是用户通过 docker client 发送命令，docker daemon 接收到命令后向 <a href="#%E4%BB%93%E5%BA%93%EF%BC%88Repository%EF%BC%89">docker registry</a> 发送 image 下载请求，下载后存放在本地，这样我们就可以使用 image 了。<br>镜像构建完成后，一般会在当前宿主机上，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，<a href="#%E4%BB%93%E5%BA%93%EF%BC%88Repository%EF%BC%89">Docker Registry</a> 就是这样一个服务，用来保存镜像。它与我们常用的maven reopsitory是一个类似的东西，只是装的东西不同而已。<br>每个Docker Registry可以包含多个<a href="#%E4%BB%93%E5%BA%93%EF%BC%88Repository%EF%BC%89">仓库（Repository）</a>，一个仓库可以内可以有同一个软件不同版本的镜像。为了对同一镜像不同版本进行区分，每个镜像都有一个对应的标签（tag）用于标记其版本。<br>我们可以通过<code>&lt;仓库名&gt;:&lt;标签&gt;</code>的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 latest 作为默认标签。</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6/">软件</a>, <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/">开发</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022-07-01/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/Docker%E5%8E%9F%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Docker原理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022-06-29/%E8%BD%AF%E4%BB%B6/%E6%95%88%E7%8E%87/quicker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">quicker</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%E7%9A%84%E8%B5%B7%E6%BA%90"><span class="nav-number">1.</span> <span class="nav-text">容器技术的起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF-vs-%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="nav-number">2.</span> <span class="nav-text">容器技术 vs 虚拟机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E6%A6%82%E5%BF%B5"><span class="nav-number">3.</span> <span class="nav-text">docker 中的重要概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%EF%BC%88Container%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">容器（Container）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%95%9C%E5%83%8F%EF%BC%88Image%EF%BC%89"><span class="nav-number">3.2.</span> <span class="nav-text">镜像（Image）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%93%E5%BA%93%EF%BC%88Repository%EF%BC%89"><span class="nav-number">3.3.</span> <span class="nav-text">仓库（Repository）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">docker 的工作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-dockerfile"><span class="nav-number">4.1.</span> <span class="nav-text">1. dockerfile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-docker-build"><span class="nav-number">4.2.</span> <span class="nav-text">2. docker build</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-docker-run"><span class="nav-number">4.3.</span> <span class="nav-text">3. docker run</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-docker-pull"><span class="nav-number">4.4.</span> <span class="nav-text">4. docker pull</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/categories/%E8%BD%AF%E4%BB%B6" class="mobile-nav-link">software</a>
+  
+    <a href="/categories/%E4%BB%93%E5%BA%93" class="mobile-nav-link">goods</a>
+  
+    <a href="/categories/%E8%B5%84%E6%96%99" class="mobile-nav-link">info</a>
+  
+    <a href="/categories/%E5%89%AA%E6%8A%A5" class="mobile-nav-link">news</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2023 时空回廊 <a target="_blank" href="https://beian.miit.gov.cn/" rel="nofollow noopener">辽ICP备2023012496号-1</a>  <img style="width: 15px; height: 15px;" src="http://www.beian.gov.cn/img/new/gongan.png" alt="全国互联网安全"><a href= "https://beian.mps.gov.cn/#/query/webSearch?code=21080202000249\" rel=\"noreferrer\" target=\"_blank\">辽公网安备21080202000249号</a >
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>&<a href="https://github.com/random-yang/paper" target="_blank">paper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/bootstrap.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'G-9KV0DS4YW6', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1281057862&web_id=1281057862" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+	<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?{{ theme.baidu_analytics }}";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
