@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2022.06.21.“单语田野调查法”演示.md",
+                "file": "2024.01.29.租房.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 379.5
+    "width": 265.5
   },
   "right": {
     "id": "62649b69f7c89740",
@@ -101,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2022.06.21.“单语田野调查法”演示.md",
+                "file": "2024.01.29.租房.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2022.06.21.“单语田野调查法”演示.md",
+                "file": "2024.01.29.租房.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2022.06.21.“单语田野调查法”演示.md"
+                "file": "2024.01.29.租房.md"
               }
             }
           },
@@ -189,13 +189,29 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-spaced-repetition:复习卡片": false,
-      "remotely-save:Remotely Save": false
+      "remotely-save:Remotely Save": false,
+      "obsidian-spaced-repetition:复习卡片": false
     }
   },
   "active": "4336ff02c4177f2a",
   "lastOpenFiles": [
+    "2024.01.29.输入法切换工具.md",
+    "2024.01.29.美颜.md",
+    "2024.01.29.旅行.md",
+    "2024.01.29.浏览器.md",
+    "2024.01.29.租房.md",
+    "2023.04.28.社交.md",
+    "2023.04.28.剪辑.md",
+    "2023.04.28.音乐.md",
+    "2023.11.06.监控.md",
+    "2024.01.03.题库.md",
+    "2022.12.07.OCR.md",
+    "2023.04.28.聊天机器人.md",
+    "2023.05.07.英语单词.md",
+    "2023.10.26.厨师机.md",
     "2023.12.27.秋夜.md",
+    "2022.10.13.王牌飞行员学校.md",
+    "2022.06.21.“单语田野调查法”演示.md",
     "2023.12.27.秋夜.sync-conflict-20231228-143515-SXYZRSI.md",
     "2022.10.18.记忆比赛选手詹姆斯·帕特森.md",
     "2022.12.02.国际象棋大师Alekhine的盲棋比赛.md",
@@ -205,22 +221,6 @@
     "2023.08.20.安德森门窗公司的企业文化.md",
     "2023.08.20.飞行员马特·布朗.md",
     "2023.08.20.钢琴家塞尔玛·亨特.md",
-    "2023.08.20.捷飞络公司汽车修理培训.md",
-    "2023.08.20.农夫保险公司的销售培训.md",
-    "2023.08.20.演员纳撒尼尔·富勒如何背台词.md",
-    "2023.08.20.医学生麦克尔·扬.md",
-    "2023.12.26.语音识别.md",
-    "2023.09.18.投影仪.md",
-    "2023.10.26.厨师机.md",
-    "2023.11.01.空调.md",
-    "2020.09.14.解决卡脖子问题，关键还是要建立好自己的开源社区.md",
-    "2022.12.07.OCR.md",
-    "2023.01.20.翻译.md",
-    "2023.05.07.英语词典.md",
-    "2023.10.25.硬盘.md",
-    "2023.11.22.内衣.md",
-    "2023.04.28.记录.md",
-    "2023.04.27.运动.md",
     "未命名 1.canvas",
     "未命名.canvas",
     "Pasted image 20230428092812.png"
