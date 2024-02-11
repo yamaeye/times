@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2024.01.29.租房.md",
+                "file": "2024.02.11.从双鱼时代到宝瓶时代.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "内存",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +85,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.5
+    "width": 265.5,
+    "collapsed": true
   },
   "right": {
     "id": "62649b69f7c89740",
@@ -101,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024.01.29.租房.md",
+                "file": "2024.02.11.从双鱼时代到宝瓶时代.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024.01.29.租房.md",
+                "file": "2024.02.11.从双鱼时代到宝瓶时代.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024.01.29.租房.md"
+                "file": "2024.02.11.从双鱼时代到宝瓶时代.md"
               }
             }
           },
@@ -178,7 +179,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 248.5
+    "width": 248.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,14 +198,18 @@
   "active": "4336ff02c4177f2a",
   "lastOpenFiles": [
     "2024.01.29.输入法切换工具.md",
+    "2024.01.29.租房.md",
+    "2024.02.11.从双鱼时代到宝瓶时代.md",
+    "2023.11.06.监控.md",
+    "2023.05.30.路由器.md",
+    "2022.07.01.什么是Docker？.md",
+    "2023.10.25.硬盘.md",
     "2024.01.29.美颜.md",
     "2024.01.29.旅行.md",
     "2024.01.29.浏览器.md",
-    "2024.01.29.租房.md",
     "2023.04.28.社交.md",
     "2023.04.28.剪辑.md",
     "2023.04.28.音乐.md",
-    "2023.11.06.监控.md",
     "2024.01.03.题库.md",
     "2022.12.07.OCR.md",
     "2023.04.28.聊天机器人.md",
@@ -217,10 +223,6 @@
     "2022.12.02.国际象棋大师Alekhine的盲棋比赛.md",
     "2023.07.06.成功人士罗杰.md",
     "2023.07.20.杰弗里的9·11情感试炼.md",
-    "2023.08.14.自学成才的观赏植物园艺师邦妮·布洛杰特.md",
-    "2023.08.20.安德森门窗公司的企业文化.md",
-    "2023.08.20.飞行员马特·布朗.md",
-    "2023.08.20.钢琴家塞尔玛·亨特.md",
     "未命名 1.canvas",
     "未命名.canvas",
     "Pasted image 20230428092812.png"
