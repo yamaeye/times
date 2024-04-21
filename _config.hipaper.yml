@@ -58,7 +58,7 @@ widgets:
 # Key is the name of FontAwsome icon.
 # Value is the target link (E.g. GitHub: https://github.com/iTimeTraveler)
 social:
-  book: https://yamaeye.github.io/docs/#/
+  book: http://www.sophie-eden.ltd:5171/#/
   paper-plane: https://yamaeye.github.io/city/public
   picture-o: https://sophie-eden.pages.dev/
   comments-o: https://www.douban.com/group/698904/
