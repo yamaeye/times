@@ -10,6 +10,7 @@ body:after {
   clear: both;
 }
 @import url("https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@900&display=swap");
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 html,
 body,
 div,
@@ -123,8 +124,8 @@ button::-moz-focus-inner {
   font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif, "微软雅黑";
   font-style: normal;
   font-weight: normal;
-  src: url("https://yamaeye.pages.dev/css/fonts/fontawesome-webfont.eot?v=#4.0.3");
-  src: url("https://yamaeye.pages.dev/css/fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("https://yamaeye.pages.dev/css/fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("https://yamaeye.pages.dev/css/fonts/fontawesome-webfont.ttf?v=#4.0.3") format("truetype"), url("https://yamaeye.pages.dev/css/fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
+  src: url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.eot?v=#4.0.3");
+  src: url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.ttf?v=#4.0.3") format("truetype"), url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
 }
 html,
 body {

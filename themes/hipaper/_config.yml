@@ -47,11 +47,11 @@ fancybox: true
 sidebar: right
 widgets:
 - search
-- social
 - category
 - tagcloud
 - archive
-- recent_posts
+# - recent_posts
+# - social
 # - tag
 
 # Social Links
@@ -63,7 +63,7 @@ social:
   picture-o: https://sophie-eden.pages.dev/
   comments-o: https://www.douban.com/group/698904/
   Weibo: https://weibo.com/3103384971
-  heartbeat: https://music.163.com/#/user/home?id=29382116
+  <i class="heartbeat"></i>: https://music.163.com/#/user/home?id=29382116
 
 
 # Search

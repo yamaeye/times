@@ -15,7 +15,7 @@ timezone: 'Asia/Shanghai'
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 # url: https://yamaeye.pages.dev/
 # url: https://yamaeye.gitee.io/
-url: http://times.sophie-eden.ltd/
+url: http://www.sophie-eden.ltd:7133/
 root: 
 permalink: :year-:month-:day/:category/:title/
 permalink_defaults:

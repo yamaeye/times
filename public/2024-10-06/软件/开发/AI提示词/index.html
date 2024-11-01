@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>AI提示词 | 时空回廊</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="摘抄, 转载" />
+  
+  
+  
+  
+  <meta name="description" content="提示工程策略能够精准地驱动任何大语言模型为你服务，CO-STAR 框架由新加坡政府科技局（GovTech）数据科学与 AI 团队创立，是一个实用的提示构建工具。CO-STAR 框架以有组织的方式提供所有关键任务信息，考虑了所有影响模型响应效果和相关性的关键因素，从而根据需求优化反馈。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI提示词">
+<meta property="og:url" content="http://www.sophie-eden.ltd:7133/2024-10-06/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/AI%E6%8F%90%E7%A4%BA%E8%AF%8D/index.html">
+<meta property="og:site_name" content="时空回廊">
+<meta property="og:description" content="提示工程策略能够精准地驱动任何大语言模型为你服务，CO-STAR 框架由新加坡政府科技局（GovTech）数据科学与 AI 团队创立，是一个实用的提示构建工具。CO-STAR 框架以有组织的方式提供所有关键任务信息，考虑了所有影响模型响应效果和相关性的关键因素，从而根据需求优化反馈。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-06T11:11:35.000Z">
+<meta property="article:modified_time" content="2024-10-06T14:57:09.000Z">
+<meta property="article:author" content="Sophie Eden">
+<meta property="article:tag" content="AI">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="时空回廊" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="时空回廊" rel="home"> 时空回廊 </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">不确定之物的终点站·聆听万物之声·资讯统合思念体·薛定谔的猫</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="/"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories/软件"> <a class="" href="/categories/%E8%BD%AF%E4%BB%B6">软件</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories/仓库"> <a class="" href="/categories/%E4%BB%93%E5%BA%93">仓库</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories/资料"> <a class="" href="/categories/%E8%B5%84%E6%96%99">资料</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="categories/剪报"> <a class="" href="/categories/%E5%89%AA%E6%8A%A5">剪报</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="archives"> <a class="" href="/archives">时间线</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" linktext="tags"> <a class="" href="/tags">标签</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-AI提示词" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      AI提示词
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2024-10-06/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/AI%E6%8F%90%E7%A4%BA%E8%AF%8D/" class="article-date">
+	  <time datetime="2024-10-06T11:11:35.000Z" itemprop="datePublished">十月 6, 2024</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6/">软件</a>, <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/">开发</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>提示工程策略能够精准地驱动任何大语言模型为你服务，<code>CO-STAR 框架</code>由新加坡政府科技局（GovTech）数据科学与 AI 团队创立，是一个实用的提示构建工具。CO-STAR 框架以有组织的方式提供所有关键任务信息，考虑了所有影响模型响应效果和相关性的关键因素，从而根据需求优化反馈。</p>
+<span id="more"></span>
+
+<h3 id="CO-STAR-框架"><a href="#CO-STAR-框架" class="headerlink" title="CO-STAR 框架"></a>CO-STAR 框架</h3><h4 id="CONTEXT-上下文：为任务提供背景信息"><a href="#CONTEXT-上下文：为任务提供背景信息" class="headerlink" title="CONTEXT 上下文：为任务提供背景信息"></a>CONTEXT 上下文：为任务提供背景信息</h4><p>通过为大语言模型（LLM）提供详细的背景信息，可以帮助它精确理解讨论的具体场景，确保提供的反馈具有相关性。</p>
+<h4 id="OBJECTIVE-目标：明确要求完成的任务"><a href="#OBJECTIVE-目标：明确要求完成的任务" class="headerlink" title="OBJECTIVE 目标：明确要求完成的任务"></a>OBJECTIVE 目标：明确要求完成的任务</h4><p>清晰地界定任务目标，可以使大语言模型更专注地调整其回应，以实现这一具体目标。</p>
+<h4 id="STYLE-风格：明确期望的写作风格"><a href="#STYLE-风格：明确期望的写作风格" class="headerlink" title="STYLE 风格：明确期望的写作风格"></a>STYLE 风格：明确期望的写作风格</h4><p>你可以指定一个特定的著名人物或某个行业专家的写作风格，如商业分析师或 CEO。这将指导大语言模型以一种符合你需求的方式和词汇选择进行回应。</p>
+<h4 id="TONE-语气：设置回应的情感基调"><a href="#TONE-语气：设置回应的情感基调" class="headerlink" title="TONE 语气：设置回应的情感基调"></a>TONE 语气：设置回应的情感基调</h4><p>设定适当的语气，确保大语言模型的回应能够与预期的情感或情绪背景相协调。可能的语气包括正式、幽默、富有同情心等。</p>
+<h4 id="AUDIENCE-受众：识别目标受众"><a href="#AUDIENCE-受众：识别目标受众" class="headerlink" title="AUDIENCE 受众：识别目标受众"></a>AUDIENCE 受众：识别目标受众</h4><p>针对特定受众定制大语言模型的回应，无论是领域内的专家、初学者还是儿童，都能确保内容在特定上下文中适当且容易理解。</p>
+<h4 id="RESPONSE-响应：规定输出的格式"><a href="#RESPONSE-响应：规定输出的格式" class="headerlink" title="RESPONSE 响应：规定输出的格式"></a>RESPONSE 响应：规定输出的格式</h4><p>确定输出格式是为了确保大语言模型按照你的具体需求进行输出，便于执行下游任务。常见的格式包括列表、JSON 格式的数据、专业报告等。对于大部分需要程序化处理大语言模型输出的应用来说，JSON 格式是理想的选择。</p>
+<p>假设你担任社交媒体经理，需要草拟一条 Facebook 帖子，用以推广公司的新产品。 未使用 CO-STAR 的快速提示可能是这样的： 为我的公司 Alpha 的新产品 Beta——一款新型超快速吹风机，撰写一条 Facebook 帖子。</p>
+<p>下面是一个应用 CO-STAR 模板的示例，它提醒我们在制定提示时，要考虑到任务的其它方面，特别是之前快速提示中缺少的风格、语调和受众：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">### CONTEXT 上下文</span><br><span class="line"></span><br><span class="line">我想推广公司的新产品。我的公司名为 Alpha，新产品名为 Beta，是一款新型超快速吹风机。</span><br><span class="line"></span><br><span class="line">### OBJECTIVE 目标 </span><br><span class="line"></span><br><span class="line">帮我创建一条 Facebook 帖子，目的是吸引人们点击产品链接进行购买。</span><br><span class="line"></span><br><span class="line">### STYLE 风格 </span><br><span class="line"></span><br><span class="line">参照 Dyson 等成功公司的宣传风格，它们在推广类似产品时的文案风格。</span><br><span class="line"></span><br><span class="line">### TONE 语调</span><br><span class="line"></span><br><span class="line">说服性</span><br><span class="line"></span><br><span class="line">### AUDIENCE 受众 </span><br><span class="line"></span><br><span class="line">我们公司在 Facebook 上的主要受众是老年人。请针对这一群体在选择护发产品时的典型关注点来定制帖子。</span><br><span class="line"></span><br><span class="line">### RESPONSE 响应 </span><br><span class="line"></span><br><span class="line">保持 Facebook 帖子简洁而深具影响力。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<table>
+<thead>
+<tr>
+<th>系统设定：谁</th>
+<th>任务内容：做什么</th>
+<th>答案模板：验收</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Character<br>&#x2F; Role 角色</td>
+<td>Background 背景<br>&#x2F; Context 上下文</td>
+<td>Constrains 限制<br>&#x2F; 操作边界</td>
+</tr>
+<tr>
+<td>Skill 能力</td>
+<td>Objective &#x2F;<br>Goals 目标</td>
+<td>规范输出格式<br>&#x2F; Response 预设响应</td>
+</tr>
+<tr>
+<td>Audience 受众</td>
+<td>Workflows 流程<br>&#x2F; 步骤分解</td>
+<td>Style 模仿风格</td>
+</tr>
+<tr>
+<td>Tone 语调</td>
+<td>标记变量元素名</td>
+<td>示例应用</td>
+</tr>
+<tr>
+<td>Profile 简介</td>
+<td>拆分指令与数据</td>
+<td>Initialization 初始化</td>
+</tr>
+</tbody></table>
+<h3 id="结构化提示词"><a href="#结构化提示词" class="headerlink" title="结构化提示词"></a>结构化提示词</h3><p>@<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/615216526/answer/3529507123">AI评测工坊</a>：</p>
+<p>指定任务+背景信息+任务细节+指定角色：</p>
+<p>你是一名大学英语教师，你具备以下能力：<br>能够根据成人学习者的背景信息及学习需求制定有效的量化教学计划和教学内容。<br>请你帮我制定一个英语学习计划，制定的学习计划中涉及到的在线学习平台一定是中国国内的平台。<br>我年龄20岁，性别男，目前是大二学生，我掌握的英语单词词汇量为3000<br>我的目标是在1个月内拿握词汇量达到5000。我在工作日投入的学习时间为每天1个小时，在周末投入的学习时间为每天4小时。</p>
+<h4 id="Profile-简介"><a href="#Profile-简介" class="headerlink" title="Profile 简介"></a>Profile 简介</h4><p>通常是极少提示词的：作者、版本号等信息。示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## Profile:  </span><br><span class="line"></span><br><span class="line"> - writer:AI Wisland  </span><br><span class="line"> - version:1.0  </span><br><span class="line"> - language:中文</span><br></pre></td></tr></table></figure>
+<h4 id="Role-角色"><a href="#Role-角色" class="headerlink" title="Role 角色"></a>Role 角色</h4><p>本质上是为了缩小词向量查找范围，让大模型在自己的词向量坐标中找到和此角色更贴近的词汇。<br>比如上述【制定英语学习计划】中给大模型指定的角色：【你是一名成人英语教师】，或是让它扮演一个医生，它回答的时候就会展现医生的风格和专业。示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## Role：  </span><br><span class="line"></span><br><span class="line">中文学术论文写作改进助理</span><br></pre></td></tr></table></figure>
+
+<p>角色一般用第二人称【你】，有时候也用第一人称【我】，只要保证整个提示词中出现的人称代词不混乱即可，就是不要在一个提示词中不要一个地方用【你】来表示大模型，一个地方用【我】来表示大模型。</p>
+<h4 id="Skills-能力"><a href="#Skills-能力" class="headerlink" title="Skills 能力"></a>Skills 能力</h4><p>对角色的进一步补充，我们给大模型指定角色的时候，大模型扮演这个的这个角色需要具备哪些能力才能更好的完成我们的任务，需要具备的能力都在这里指定。示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## Skills:</span><br><span class="line"></span><br><span class="line">- 深刻理解优秀小红书笔记的核心要素。</span><br><span class="line">- 能够理解小红书笔记的关键内容。有能力分析文案的表达、逻辑和吸引力。</span><br><span class="line">- 在比较笔记时，能够清晰指出每个笔记的优点和缺点。</span><br><span class="line">- 作为目标领域的专家，你的内容应当具有权威性。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Background-背景"><a href="#Background-背景" class="headerlink" title="Background 背景"></a>Background 背景</h4><p>任务的背景信息，目的也是为了让大模型更好的“理解”我们的任务。示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## Background:</span><br><span class="line"></span><br><span class="line">你的目标用户在职场中一直承受着巨大压力，你的鼓励对他们非常重要</span><br></pre></td></tr></table></figure>
+<h4 id="Goals-目标"><a href="#Goals-目标" class="headerlink" title="Goals 目标"></a>Goals 目标</h4><p>任务的总体目标。示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## Goals:</span><br><span class="line"></span><br><span class="line">- 根据用户输入的信息，生成一篇小红书笔记</span><br></pre></td></tr></table></figure>
+
+<h4 id="Constrains-限制"><a href="#Constrains-限制" class="headerlink" title="Constrains 限制"></a>Constrains 限制</h4><p>对大模型输出的内容进行限制。示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## Constrains:</span><br><span class="line"></span><br><span class="line">- 为每个小红书文案提供1-100分的评分，100分为最高分。提供中立和客观的评价，避免主观偏见。</span><br><span class="line">- 提供简要反馈或建议，说明给出该评分的原因。</span><br><span class="line">- 在多次评分时，对于相同的笔记内容，你的评分应保持一致。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Workflows-流程"><a href="#Workflows-流程" class="headerlink" title="Workflows 流程"></a>Workflows 流程</h4><p>大模型的工作流程，大模型会根据你指定的流程，按照步骤一步一步执行。示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## Workflows:</span><br><span class="line"></span><br><span class="line">1. 向用户介绍自己</span><br><span class="line">2. 引导用户输入基本信息</span><br><span class="line">3. 根据用户输入的信息进行回答</span><br></pre></td></tr></table></figure>
+
+<h4 id="Initialization-初始化"><a href="#Initialization-初始化" class="headerlink" title="Initialization 初始化"></a>Initialization 初始化</h4><p>初始化内容，一般在这里设置大模型和用户打招呼的内容。示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## Initialization：</span><br><span class="line"></span><br><span class="line">用户将是你的小主人，你必须用默认的&lt;语言&gt;与小主人交流。在向小主人问好后，简要介绍一下你自己。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="系统提示"><a href="#系统提示" class="headerlink" title="系统提示"></a>系统提示</h3><p>向大语言模型提供的关于其应如何响应的额外指示，它超出了对大语言模型的常规用户提示。在对话中，每当您提出一个新的提示时，系统提示就像是一个过滤器，大语言模型会在回应您的新提示之前自动应用这一过滤器。</p>
+<p>系统提示应提供整体任务指令，而每个用户提示则需要提供执行该任务所需的具体细节。在对话中每次大语言模型给出回应时，都会考虑到这些系统提示。</p>
+<ul>
+<li><strong>任务定义</strong>：确保大语言模型（LLM）在整个对话中清楚自己的任务。</li>
+<li><strong>输出格式</strong>：指导 LLM 如何格式化其回答。</li>
+<li><strong>操作边界</strong>：明确 LLM 不应采取的行为。这些边界是 LLM 治理中新兴的一个方面，旨在界定 LLM 的操作范围。</li>
+</ul>
+<p>系统提示概括了任务的总体要求。在以下示例中，任务被定义为仅使用特定文本进行问题解答，同时指导 LLM 按照{“问题”：”答案”}的格式进行回答。</p>
+<ul>
+<li><strong>任务定义</strong>：您需要用这段文本来回答问题：<code>[插入文本]</code>。</li>
+<li><strong>输出格式</strong>：请按照{“问题”: “答案”}的格式来回答。</li>
+<li><strong>操作边界</strong>：如果文本信息不足以回答问题，请以”NA”作答。</li>
+<li><strong>操作边界</strong>：您只能解答与<code>[指定范围]</code>相关的问题。请避免回答任何与年龄、性别及宗教等人口统计信息相关的问题。</li>
+</ul>
+<p>这种情况下，每个用户提示就是您想用该文本回答的具体问题。例如，用户提示可能是”这篇文本主要讲了什么？”，LLM 的回答将是{“这篇文本主要讲了什么？”:”文本主要讲述了……”}。</p>
+<p>通常，与只询问一个文本相比，你可能会有多个文本需要询问。这时，可以将系统提示的首句改为——您需要使用提供的文本来回答问题。每个用户提示将包括要问答的文本和问题，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;text&gt; [插入文本] &lt;/text&gt;</span><br><span class="line">&lt;question&gt; [插入问题] &lt;/question&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务提示"><a href="#任务提示" class="headerlink" title="任务提示"></a>任务提示</h3><h4 id="将复杂任务分解成简单步骤"><a href="#将复杂任务分解成简单步骤" class="headerlink" title="将复杂任务分解成简单步骤"></a>将复杂任务分解成简单步骤</h4><p>大语言模型（LLM）擅长处理简单的任务，对于复杂的任务则表现不佳。因此，在面对复杂任务时，把它分解成一步步简单的指令是至关重要的。这种方法的核心思想是，明确告知 LLM 你自己执行该任务时会采取的每一个步骤。</p>
+<h4 id="用大写字母标记并引用每个步骤的中间输出"><a href="#用大写字母标记并引用每个步骤的中间输出" class="headerlink" title="用大写字母标记并引用每个步骤的中间输出"></a>用大写字母标记并引用每个步骤的中间输出</h4><p>：这样做是为了区分指令中的变量名和其他文本，方便后续引用这些中间输出。如数据聚类（CLUSTERS）、聚类描述（CLUSTER_INFORMATION）、聚类命名（CLUSTER_NAME）、营销策略（MARKETING_IDEAS）和策略解释（RATIONALE）。</p>
+<h4 id="格式化-LLM-的回答"><a href="#格式化-LLM-的回答" class="headerlink" title="格式化 LLM 的回答"></a>格式化 LLM 的回答</h4><p>此处请求一个 Markdown 格式的报告，以增强响应的可读性和结构性。利用中间步骤的变量名，可以明确报告的构架。还可以让 ChatGPT 将报告以可下载文件形式提供，便于在编写最终报告时参考使用。</p>
+<h4 id="将指令与数据集分离"><a href="#将指令与数据集分离" class="headerlink" title="将指令与数据集分离"></a>将指令与数据集分离</h4><p>并没有直接将数据集交给大语言模型（LLM），提示只给出了数据集分析的任务指令，并在底部要求向我请求数据集。直到在下一个提示中，才通过 CSV 字符串的形式将数据集传递给它。这样做可以帮助大语言模型更清晰地理解各自的内容，降低遗漏信息的风险，尤其是在指令较多且复杂的任务中。</p>
+<p>你可能遇到过这样的情况：在一个长的提示中提出的某个指令被“偶然遗忘”了——例如，你请求一个 100 字的回答，但大语言模型却给出了更长的段落。通过先接收指令，再处理这些指令所对应的数据集，大语言模型可以更好地消化它应该做的事情，然后再执行相关的数据操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">系统提示：</span><br><span class="line"></span><br><span class="line">我希望你扮演数据科学家的角色来分析数据集。</span><br><span class="line">不要编造数据集中不存在的信息。</span><br><span class="line">对于我提出的每个分析要求，提供确切且确定的答案，不要提供代码或指导在其他平台上进行分析的方法。</span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line"># CONTEXT #</span><br><span class="line">我销售葡萄酒。我手头有一个客户信息数据集：[出生年份，婚姻状况，收入，子女数量，上次购买至今天数，消费金额]。</span><br><span class="line"></span><br><span class="line">#############</span><br><span class="line"></span><br><span class="line"># OBJECTIVE #</span><br><span class="line">我希望你利用这个数据集将我的客户分组，并为每个群组制定营销策略。遵循以下分步骤，且不使用代码：</span><br><span class="line"></span><br><span class="line">1. CLUSTERS: 根据数据集的列将客户分组，确保同一群组内的客户在列值上相似，不同群组的客户在列值上明显不同。确保每一行数据只属于一个群组。</span><br><span class="line"></span><br><span class="line">对于每个发现的群组，</span><br><span class="line">2. CLUSTER_INFORMATION: 根据数据集的列来描述群组。</span><br><span class="line">3. CLUSTER_NAME: 根据[CLUSTER_INFORMATION]解读得出该客户群组的简称。</span><br><span class="line">4. MARKETING_IDEAS: 提出针对该客户群组的市场营销策略。</span><br><span class="line">5. RATIONALE: 解释为什么[MARKETING_IDEAS]对这个客户群组有效且相关。</span><br><span class="line"></span><br><span class="line">#############</span><br><span class="line"></span><br><span class="line"># STYLE #</span><br><span class="line">商业分析报告</span><br><span class="line"></span><br><span class="line">#############</span><br><span class="line"></span><br><span class="line"># TONE #</span><br><span class="line">专业、技术性</span><br><span class="line"></span><br><span class="line">#############</span><br><span class="line"></span><br><span class="line"># AUDIENCE #</span><br><span class="line">我的商业伙伴们。让他们相信你的营销策略是深思熟虑的，并且有充分的数据支持。</span><br><span class="line"></span><br><span class="line">#############</span><br><span class="line"></span><br><span class="line"># RESPONSE: MARKDOWN REPORT #</span><br><span class="line">&lt;对[CLUSTERS]中的每一个群组&gt; </span><br><span class="line">- 客户群组：[CLUSTER_NAME] </span><br><span class="line">- 群组档案：[CLUSTER_INFORMATION] </span><br><span class="line">- 营销策略：[MARKETING_IDEAS] </span><br><span class="line">- 理由：[RATIONALE]</span><br><span class="line"></span><br><span class="line">&lt;附录&gt;</span><br><span class="line">提供一个表格，列出每个群组中的行号，以支持你的分析。表头如下：[[CLUSTER_NAME], 行号列表]。</span><br><span class="line"></span><br><span class="line">#############</span><br><span class="line"></span><br><span class="line"># START ANALYSIS #</span><br><span class="line">如果你已经明白，请向我索要我的数据集。</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h3><p>对于需要精确的数学运算或复杂的规则处理的任务，传统的编程方法依然更加适用。而对于依赖模式识别的任务，传统的编程和算法处理可能更加困难且耗时。大语言模型在这类任务中表现优异，能提供包括分析附件在内的额外输出，并能生成 Markdown 格式的完整分析报告。</p>
+<p>LLMs 在执行精确的数学计算方面有所限制，这让它们不适合需要精确量化分析的任务，比如：</p>
+<ul>
+<li><strong>描述性统计（Descriptive Statistics）：</strong> 通过如均值或方差等措施定量总结数值列。</li>
+<li><strong>相关性分析（Correlation Analysis）：</strong> 获取列间的精确相关系数。</li>
+<li><strong>统计分析（Statistical Analysis）：</strong> 例如进行假设检验，判断数据点组间是否存在统计显著的差异。</li>
+<li><strong>机器学习（Machine Learning）：</strong> 在数据集上执行预测模型，如使用线性回归、梯度增强树或神经网络。</li>
+</ul>
+<p>LLMs 在识别模式和趋势方面表现出色。这得益于它们在庞大且多样化的数据上接受的广泛训练，能够洞察到复杂的模式，这些模式可能不是一眼就能看出来的。这使它们非常适合执行基于模式查找的任务，例如：</p>
+<ul>
+<li><strong>异常检测：</strong> 基于一个或多个列值，识别偏离常态的异常数据点。</li>
+<li><strong>聚类：</strong> 将具有相似特征的数据点按列分组。</li>
+<li><strong>跨列关系：</strong> 识别各列之间的联合趋势。</li>
+<li><strong>文本分析（适用于文本列）：</strong> 根据主题或情感进行分类。</li>
+<li><strong>趋势分析（针对有时间维度的数据集）：</strong> 识别列中的模式、季节性变化或趋势。</li>
+</ul>
+<h3 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h3><p>可以是任何不常见组合的特殊字符序列，如： </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">###</span><br><span class="line">===</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>选择哪种特殊字符并不重要，关键是这些字符足够独特，使得模型能将其识别为分隔符，而非常规标点符号。它们帮助大语言模型 (LLM) 辨识提示中哪些部分应当被视为一个完整的意义单元，可以为这些 Token 序列提供结构，使特定部分得到不同的处理。</p>
+<p>这里是一个分隔符使用的示例：请在 <code>&lt;&lt;&lt;CONVERSATIONS&gt;&gt;&gt;</code> 中对每段对话的情绪进行分类，标为‘正面’或‘负面’。仅提供情绪分类结果，不需任何引言。</p>
+<p>使用 <code>###</code> 分隔符来分隔不同的部分，通过大写的章节标题如 <code>对话示例</code> 和 <code>输出示例</code> 进行区分。引言部分说明了要对 <code>&lt;&lt;&lt;CONVERSATIONS&gt;&gt;&gt;</code> 中的对话进行情绪分类，而这些对话在提示的底部给出，没有任何解释文本，但分隔符的存在让模型明白这些对话需要被分类。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">对话示例</span><br><span class="line"></span><br><span class="line">[Agent]: 早上好，今天我能为您做些什么？  </span><br><span class="line">[Customer]: 这个产品真差劲，一点都不符合广告宣传！  </span><br><span class="line">[Customer]: 我非常不满，要求全额退款。</span><br><span class="line"></span><br><span class="line">[Agent]: 早安，我今天怎么为您服务？ </span><br><span class="line">[Customer]: 嗨，我只想说我真的很喜欢你们的产品。它超出了我的预期！</span><br><span class="line"></span><br><span class="line">#############</span><br><span class="line"></span><br><span class="line">输出示例</span><br><span class="line"></span><br><span class="line">负面</span><br><span class="line"></span><br><span class="line">正面</span><br><span class="line"></span><br><span class="line">#############</span><br><span class="line"></span><br><span class="line">&lt;&lt;&lt;  </span><br><span class="line">[Agent]: 您好！欢迎使用我们的客服。今天有什么可以帮到您的？  </span><br><span class="line">[Customer]: 嗨，我只想让你知道我收到了订单，它非常棒！  </span><br><span class="line">[Agent]: 那太好了！我们很高兴您对购买感到满意。还有其他需要帮助的吗？  </span><br><span class="line">[Customer]: 不，就这些了。只是想表达一下我的好评。感谢您的优质服务！</span><br><span class="line"></span><br><span class="line">[Agent]: 您好，感谢您联系我们。今天有什么可以帮助您的？  </span><br><span class="line">[Customer]: 我对最近的购买非常不满。这完全不是我所期待的。  </span><br><span class="line">[Agent]: 我很抱歉听到您有这样的体验。您能否提供更多细节，以便我为您提供帮助？  </span><br><span class="line">[Customer]: 产品质量不佳，而且送达晚了。我对这次购买感到非常不满。  </span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>使用 XML 标签作为分隔符是一种方法。XML 标签是被尖括号包围的，包括开启标签和结束标签。例如，<code>&lt;tag&gt;</code>和<code>&lt;/tag&gt;</code>。这种方法非常有效，因为大语言模型已经接受了大量包含 XML 格式的网页内容的训练，因此能够理解其结构。以下是利用 XML 标签作为分隔符对同一提示进行结构化的例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">分类以下对话的情感，分为正面和负面两类，根据给出的例子进行分类。请直接给出情感分类结果，不需要添加任何引导性文本。</span><br><span class="line"></span><br><span class="line">&lt;classes&gt;</span><br><span class="line">正面</span><br><span class="line">负面</span><br><span class="line">&lt;/classes&gt;</span><br><span class="line"></span><br><span class="line">&lt;example-conversations&gt;</span><br><span class="line">[Agent]: 早上好，今天我能如何帮助您？</span><br><span class="line">[Customer]: 这个产品太糟糕了，一点都不像广告上说的那样！</span><br><span class="line">[Customer]: 我非常失望，希望全额退款。</span><br><span class="line"></span><br><span class="line">[Agent]: 早上好，今天我能怎么帮您？</span><br><span class="line">[Customer]: 嗨，我只是想说我真的对你们的产品印象深刻。它超出了我的期望！</span><br><span class="line">&lt;/example-conversations&gt;</span><br><span class="line"></span><br><span class="line">&lt;example-classes&gt;</span><br><span class="line">负面</span><br><span class="line">正面</span><br><span class="line">&lt;/example-classes&gt;</span><br><span class="line"></span><br><span class="line">&lt;conversations&gt;</span><br><span class="line">[Agent]: 你好！欢迎来到我们的支持。今天我能怎么帮您？</span><br><span class="line">[Customer]: 嗨，我只是想让你知道我收到我的订单了，它太棒了！</span><br><span class="line">[Agent]: 听到这个真好！我们很高兴你对购买感到满意。还有其他我能帮忙的吗？</span><br><span class="line">[Customer]: 不，就这些。只是想给一些正面的反馈。谢谢你们的优质服务！</span><br><span class="line"></span><br><span class="line">[Agent]: 你好，感谢你的联系。今天我能怎么帮您？</span><br><span class="line">[Customer]: 我对我最近的购买非常失望。这完全不是我所期待的。</span><br><span class="line">[Agent]: 很遗憾听到这些。您能提供更多细节以便我帮助您吗？</span><br><span class="line">[Customer]: 产品质量差，而且到货晚。我对这次经历非常不满。</span><br><span class="line">&lt;/conversations&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>来源：<br>@<a target="_blank" rel="noopener" href="https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41">Sheila Teo</a>：<a target="_blank" rel="noopener" href="https://baoyu.io/translations/prompt-engineering/how-i-won-singapores-gpt-4-prompt-engineering-competition">我如何夺冠新加坡首届 GPT-4 提示工程大赛</a></p>
+</blockquote>
+<hr>
+<h3 id="token"><a href="#token" class="headerlink" title="token"></a>token</h3><p>@<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/615216526/answer/3566282969">西羊石AI视频</a>：</p>
+<p>ChatGPT的每次交互都有8192个token的限制，这关系到模型的上下文记忆能力。一旦超出这个限制，模型便开始遗忘最早的对话内容。要把握交流的简洁性和核心，避免冗余，确保模型能够有效保留和处理更多关键信息，防止在对话过程中出现记忆丢失现象。</p>
+<p>tokens是计算的你的输入文本+gpt的输出文本。简便计算方式为：每个英文单词约计为一个token，每个汉字亦同。一个英文单词平均为4个字母。注意：空格也算一个token，适当的减少换行和空格很重要。</p>
+<p>大模型有时会将虚假的相关关系误解为事实知识；有时会高估自己的能力，以至于生成错误答案；有时可能会生成偏向用户观点的回答，谄媚用户。</p>
+<p>在要求GPT进行推理解答时，先要求其展示推理过程，这有助于降低推理错误的风险，并使步骤更加清晰，便于审查。</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6/">软件</a>, <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6/%E5%BC%80%E5%8F%91/">开发</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024-11-01/%E4%B8%93%E4%B8%9A/%E8%89%BA%E6%9C%AF/%E7%8E%8B%E6%B4%9B%E5%AE%BE%E6%B5%AA%E6%BC%AB%E4%BA%BA%E7%94%9F%E5%9D%8E%E5%9D%B7%E8%B7%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          王洛宾浪漫人生坎坷路
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024-08-19/%E8%BD%AF%E4%BB%B6/%E5%AD%A6%E4%B9%A0/%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CO-STAR-%E6%A1%86%E6%9E%B6"><span class="nav-number">1.</span> <span class="nav-text">CO-STAR 框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CONTEXT-%E4%B8%8A%E4%B8%8B%E6%96%87%EF%BC%9A%E4%B8%BA%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%83%8C%E6%99%AF%E4%BF%A1%E6%81%AF"><span class="nav-number">1.1.</span> <span class="nav-text">CONTEXT 上下文：为任务提供背景信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OBJECTIVE-%E7%9B%AE%E6%A0%87%EF%BC%9A%E6%98%8E%E7%A1%AE%E8%A6%81%E6%B1%82%E5%AE%8C%E6%88%90%E7%9A%84%E4%BB%BB%E5%8A%A1"><span class="nav-number">1.2.</span> <span class="nav-text">OBJECTIVE 目标：明确要求完成的任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#STYLE-%E9%A3%8E%E6%A0%BC%EF%BC%9A%E6%98%8E%E7%A1%AE%E6%9C%9F%E6%9C%9B%E7%9A%84%E5%86%99%E4%BD%9C%E9%A3%8E%E6%A0%BC"><span class="nav-number">1.3.</span> <span class="nav-text">STYLE 风格：明确期望的写作风格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TONE-%E8%AF%AD%E6%B0%94%EF%BC%9A%E8%AE%BE%E7%BD%AE%E5%9B%9E%E5%BA%94%E7%9A%84%E6%83%85%E6%84%9F%E5%9F%BA%E8%B0%83"><span class="nav-number">1.4.</span> <span class="nav-text">TONE 语气：设置回应的情感基调</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AUDIENCE-%E5%8F%97%E4%BC%97%EF%BC%9A%E8%AF%86%E5%88%AB%E7%9B%AE%E6%A0%87%E5%8F%97%E4%BC%97"><span class="nav-number">1.5.</span> <span class="nav-text">AUDIENCE 受众：识别目标受众</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RESPONSE-%E5%93%8D%E5%BA%94%EF%BC%9A%E8%A7%84%E5%AE%9A%E8%BE%93%E5%87%BA%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.6.</span> <span class="nav-text">RESPONSE 响应：规定输出的格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="nav-number">2.</span> <span class="nav-text">结构化提示词</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Profile-%E7%AE%80%E4%BB%8B"><span class="nav-number">2.1.</span> <span class="nav-text">Profile 简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Role-%E8%A7%92%E8%89%B2"><span class="nav-number">2.2.</span> <span class="nav-text">Role 角色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Skills-%E8%83%BD%E5%8A%9B"><span class="nav-number">2.3.</span> <span class="nav-text">Skills 能力</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Background-%E8%83%8C%E6%99%AF"><span class="nav-number">2.4.</span> <span class="nav-text">Background 背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Goals-%E7%9B%AE%E6%A0%87"><span class="nav-number">2.5.</span> <span class="nav-text">Goals 目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Constrains-%E9%99%90%E5%88%B6"><span class="nav-number">2.6.</span> <span class="nav-text">Constrains 限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Workflows-%E6%B5%81%E7%A8%8B"><span class="nav-number">2.7.</span> <span class="nav-text">Workflows 流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Initialization-%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">2.8.</span> <span class="nav-text">Initialization 初始化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA"><span class="nav-number">3.</span> <span class="nav-text">系统提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E6%8F%90%E7%A4%BA"><span class="nav-number">4.</span> <span class="nav-text">任务提示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86%E5%A4%8D%E6%9D%82%E4%BB%BB%E5%8A%A1%E5%88%86%E8%A7%A3%E6%88%90%E7%AE%80%E5%8D%95%E6%AD%A5%E9%AA%A4"><span class="nav-number">4.1.</span> <span class="nav-text">将复杂任务分解成简单步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E5%A4%A7%E5%86%99%E5%AD%97%E6%AF%8D%E6%A0%87%E8%AE%B0%E5%B9%B6%E5%BC%95%E7%94%A8%E6%AF%8F%E4%B8%AA%E6%AD%A5%E9%AA%A4%E7%9A%84%E4%B8%AD%E9%97%B4%E8%BE%93%E5%87%BA"><span class="nav-number">4.2.</span> <span class="nav-text">用大写字母标记并引用每个步骤的中间输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96-LLM-%E7%9A%84%E5%9B%9E%E7%AD%94"><span class="nav-number">4.3.</span> <span class="nav-text">格式化 LLM 的回答</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86%E6%8C%87%E4%BB%A4%E4%B8%8E%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%86%E7%A6%BB"><span class="nav-number">4.4.</span> <span class="nav-text">将指令与数据集分离</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="nav-number">5.</span> <span class="nav-text">数据分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E9%9A%94%E7%AC%A6"><span class="nav-number">6.</span> <span class="nav-text">分隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#token"><span class="nav-number">7.</span> <span class="nav-text">token</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/categories/%E8%BD%AF%E4%BB%B6" class="mobile-nav-link">software</a>
+  
+    <a href="/categories/%E4%BB%93%E5%BA%93" class="mobile-nav-link">goods</a>
+  
+    <a href="/categories/%E8%B5%84%E6%96%99" class="mobile-nav-link">info</a>
+  
+    <a href="/categories/%E5%89%AA%E6%8A%A5" class="mobile-nav-link">news</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2024 时空回廊 <a target="_blank" href="https://beian.miit.gov.cn/" rel="nofollow noopener">辽ICP备2023012496号-1</a>  <img style="width: 15px; height: 15px;" src="http://www.beian.gov.cn/img/new/gongan.png" alt="全国互联网安全"><a href= "https://beian.mps.gov.cn/#/query/webSearch?code=21080202000249\" rel=\"noreferrer\" target=\"_blank\">辽公网安备21080202000249号</a ><br/>
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>&<a href="https://github.com/random-yang/paper" target="_blank">paper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/bootstrap.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1281057862&web_id=1281057862" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
