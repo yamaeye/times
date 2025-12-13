@@ -8,31 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4336ff02c4177f2a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2025.02.18.黑猩猩族群.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2025.02.18.黑猩猩族群"
-            }
-          },
-          {
             "id": "41259543b3dc5569",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023.08.20.飞行员马特·布朗.md",
+                "file": "2025.02.13.INTJ与INTP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2023.08.20.飞行员马特·布朗"
+              "title": "2025.02.13.INTJ与INTP"
+            }
+          },
+          {
+            "id": "9191dcce1c8a3f2f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2023.07.06.成功人士罗杰.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2023.07.06.成功人士罗杰"
             }
           }
         ]
@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "笔记",
+                "query": "南希",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -84,8 +84,8 @@
             "state": {
               "type": "starred",
               "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
+              "icon": "lucide-ghost",
+              "title": "starred"
             }
           },
           {
@@ -124,6 +124,26 @@
             "state": {
               "type": "recent-files",
               "state": {},
+              "icon": "lucide-file",
+              "title": "插件不再活动"
+            }
+          },
+          {
+            "id": "57877992040c389e",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "插件不再活动"
+            }
+          },
+          {
+            "id": "a4168757fd26de64",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
               "icon": "clock",
               "title": "Recent Files"
             }
@@ -132,8 +152,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 237.5
   },
   "right": {
     "id": "62649b69f7c89740",
@@ -195,10 +214,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024.11.01.王洛宾浪漫人生坎坷路.md"
+                "file": "2025.09.01.推背图.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2024.11.01.王洛宾浪漫人生坎坷路 的大纲"
+              "title": "2025.09.01.推背图 的大纲"
             }
           },
           {
@@ -251,12 +273,32 @@
             "state": {
               "type": "review-queue-list-view",
               "state": {},
+              "icon": "lucide-file",
+              "title": "插件不再活动"
+            }
+          },
+          {
+            "id": "a276f8c9db1abf4e",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "插件不再活动"
+            }
+          },
+          {
+            "id": "29b931b59f2cee7c",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
               "icon": "SpacedRepIcon",
               "title": "笔记复习序列"
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -265,6 +307,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:创建新数据库": false,
       "canvas:新建白板": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
@@ -276,34 +319,34 @@
       "obsidian-spaced-repetition:复习卡片": false
     }
   },
-  "active": "4336ff02c4177f2a",
+  "active": "41259543b3dc5569",
   "lastOpenFiles": [
-    "2023.08.20.飞行员马特·布朗.md",
+    "2025.07.19.为什么优秀的孩子更容易抑郁呢.md",
+    "2025.07.20.美国这几年为什么衰落得如此之快.md",
+    "2025.12.08.网球选手伊万·伦德尔.md",
+    "2025.08.11.哥贝克力石阵.md",
+    "2025.12.08.仿生工程.md",
+    "2023.07.20.9·11情感试炼.md",
+    "2025.12.08.成功人士如何避免过度劳累.md",
+    "2025.11.25.航天员与美国原住民的对话.md",
+    "2023.07.06.成功人士罗杰.md",
+    "2025.08.12.结绳语.md",
+    "2022.08.12.圣人预言.md",
+    "2025.09.01.推背图.md",
+    "2025.03.11.水至清则无鱼.md",
+    "2025.07.18.血缘宗法体系.md",
+    "2025.03.13.感觉阈值.md",
+    "2025.07.20.为什么自从清华北大毕业的大都去了美国后，美国反而没有以前繁荣强大了.md",
+    "2025.08.08.亚契人.md",
+    "2025.08.10.苏联松希尔狩猎长毛象文化遗址.md",
+    "2025.09.01.推背图.sync-conflict-20250902-090722-F26TPNK.md",
+    "2024.02.11.从双鱼时代到宝瓶时代.md",
     "2025.02.18.黑猩猩族群.md",
-    "2024.04.23.萧伯纳.md",
-    "2024.11.01.王洛宾浪漫人生坎坷路.md",
-    "2023.01.13.汉语词典.md",
-    "2024.08.19.笔记.md",
-    "2024.10.06.AI提示词.md",
-    "2023.08.20.钢琴家塞尔玛·亨特.md",
-    "2023.08.20.演员纳撒尼尔·富勒如何背台词.md",
+    "2022.06.08.三个月内学会一门语言的Lewis.md",
     "2020.09.14.解决卡脖子问题，关键还是要建立好自己的开源社区.md",
-    "2022.06.21.代码托管平台.md",
-    "2024.04.13.降噪耳机.md",
-    "2024.04.10.美容仪.md",
-    "2024.04.21.和平演变.md",
-    "2024.04.10.虚假广告.md",
-    "2024.02.21.书法.md",
-    "2023.04.18.电纸书.md",
-    "2023.04.28.工具.md",
-    "2023.04.28.记录.md",
-    "2023.04.28.音乐.md",
-    "2023.04.28.资料.md",
-    "2023.05.07.英语单词.md",
-    "2023.05.07.英语口语.md",
-    "2023.05.14.英语阅读.md",
-    "2023.05.07.英语词典.md",
-    "2023.11.06.监控.md",
+    "2022.06.05.耳朵痛和瞳孔小.md",
+    "2022.06.05.瑞典中长跑运动员Gunder-Hägg.md",
+    "2022.06.05.笑料训练.md",
     "未命名 1.canvas",
     "未命名.canvas",
     "Pasted image 20230428092812.png"
