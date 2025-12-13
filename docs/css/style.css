@@ -125,7 +125,7 @@ button::-moz-focus-inner {
   font-style: normal;
   font-weight: normal;
   src: url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.eot?v=#4.0.3");
-  src: url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.ttf?v=#4.0.3") format("truetype"), url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
+  src: url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.ttf?v=4.0.3") format("truetype"), url("https://cdn.jsdelivr.net/gh/yamaeye/source@1.0.1.240926/fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
 }
 html,
 body {

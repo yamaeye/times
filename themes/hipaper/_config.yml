@@ -46,11 +46,11 @@ fancybox: true
 sidebar: right
 widgets:
 - search
+- social
 - category
 - tagcloud
-- archive
+# - archive
 # - recent_posts
-# - social
 # - tag
 
 # Social Links
@@ -58,12 +58,11 @@ widgets:
 # Value is the target link (E.g. GitHub: https://github.com/iTimeTraveler)
 social:
   book: http://wiki.sophie-eden.ltd/
-  paper-plane: https://yamaeye.pages.dev/city/public
+  coffee: https://yamaeye.pages.dev/city/public
   picture-o: https://sophie-eden.pages.dev/
   comments-o: https://www.douban.com/group/698904/
   Weibo: https://weibo.com/3103384971
-  <i class="heartbeat"></i>: https://music.163.com/#/user/home?id=29382116
-
+  music: https://music.163.com/#/user/home?id=29382116
 
 # Search
 search:
